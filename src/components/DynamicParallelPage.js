@@ -6,6 +6,8 @@ const fetchData = (heroId) => {
   return axios.get(`http://localhost:7000/superheroes/${heroId}`);
 };
 
+// use: fetch song song cùng 1 lúc cái API
+
 const DynamicParallelPage = ({ heroIds }) => {
   const queryResults = useQueries(
     heroIds.map((id) => {

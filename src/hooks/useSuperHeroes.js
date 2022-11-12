@@ -23,6 +23,39 @@ export const useSuperHeroes = (onSuccess, onError) => {
 };
 
 export const useAddHero = () => {
+  // c1
+  // return useMutation(addHero); // nhược điểm: post nhưng ko fetch lại list data
+
+  //c2
+  // POST: 201 , fetch: 200 => phải call 2 API
+  // return useMutation(addHero, {
+  //   onSuccess: (data) =>
+  //   {
+  //     queryClient.invalidateQueries('superheroes');
+  //   }
+  // }
+
+  //c3 :  handling error
+  // show UI list data (cũ + newData), POST 1 API => client và server sync
+  // return useMutation(addHero, {
+  //   onSuccess: (data) =>
+  //   {
+  //     queryClient.setQueryData('superheroes', (oldQueryData) =>
+  //     {
+  //       return {
+  //         ...oldQueryData,
+  //         data: [...oldQueryData.data, data.data],
+  //       };
+  //     });
+  //   },
+  // }
+
+  // c4
+  //useMutation :Optimistic Updates , POST 1 API, Fetch 1 API
+  // 1. onMutate : cancel query useMutation, ghi lại previousData, setQueryData data mới = oldQueryData + newData
+  // 2. onError : rollback về previousData
+  // 3. onSettled: cập nhật query cho có data mới
+
   const queryClient = useQueryClient();
   return useMutation(addHero, {
     // onSuccess: (data) => {

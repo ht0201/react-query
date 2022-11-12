@@ -6,6 +6,8 @@ const fetchColors = ({ pageParam = 1 }) => {
   return axios.get(`http://localhost:7000/colors?_limit=2&_page=${pageParam}`);
 };
 
+// useInfiniteQuery: fetch btn Load more từ list ban đầu dc cache (ko call mỗi page)
+
 const InfiniteQueryPage = () => {
   const {
     isLoading,

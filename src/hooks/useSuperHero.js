@@ -8,6 +8,8 @@ const fetchDetails = ({ queryKey }) => {
   return request({ url: `/superheroes/${heroId}` });
 };
 
+//initialData : find dc detail từ list để hiển thị cho nhanh, url chạy sau
+
 export const useSuperHero = (heroId) => {
   const queryClient = useQueryClient();
   return useQuery(['superhero', heroId], fetchDetails, {

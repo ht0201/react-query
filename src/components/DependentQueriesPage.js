@@ -10,6 +10,8 @@ const fetchChannel = (channelId) => {
   return axios.get(`http://localhost:7000/channels/${channelId}`);
 };
 
+// use: chờ data từ API 1 truyền cho API 2 mới fetch
+
 const DependentQueriesPage = ({ email }) => {
   const { data: user } = useQuery(['users', email], () => fetchUser(email));
 
@@ -19,7 +21,7 @@ const DependentQueriesPage = ({ email }) => {
     ['channels', channelId],
     () => fetchChannel(channelId),
     {
-      enabled: !!channelId,
+      enabled: !!channelId, // chờ có channelId từ user rồi mới fetch
     }
   );
 
