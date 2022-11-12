@@ -11,9 +11,64 @@
       "alterEgo": "Clark Kent"
     },
     {
+      "name": "A",
+      "alterEgo": "111",
+      "id": 3
+    },
+    {
+      "name": "B",
+      "alterEgo": "222",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": "ht0201@gmail.com",
+      "channelId": "code"
+    }
+  ],
+  "channels": [
+    {
+      "id": "code",
+      "courses": [
+        "react",
+        "angular",
+        "vue"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "blue"
+    },
+    {
+      "id": 2,
+      "label": "orange"
+    },
+    {
       "id": 3,
-      "name": "Wonder Woman 1",
-      "alterEgo": "Princess Diana"
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "pink"
+    },
+    {
+      "id": 5,
+      "label": "yellow"
+    },
+    {
+      "id": 6,
+      "label": "red"
+    },
+    {
+      "id": 7,
+      "label": "purple"
+    },
+    {
+      "id": 8,
+      "label": "beige"
     }
   ]
 }
